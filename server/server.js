@@ -1,7 +1,7 @@
 const express = require("express")
 const path = require("path")
 const app = new express()
-const publicPath = path.join(__dirname, "..", "build")
+const publicPath = path.join(__dirname, "..", "..", "build")
 console.log(publicPath)
 require("dotenv").load()
 const port = process.env.PORT || 8080;
