@@ -3,7 +3,6 @@ const path = require("path");
 const app = new express();
 const publicPath = path.join(__dirname, "..", "build/");
 console.log(publicPath);
-require("dotenv").load();
 const port = process.env.PORT || 8080;
 const axios = require("axios");
 
