@@ -17,7 +17,8 @@
   },
   "engines": {
     "node": "8.11.3",
-    "npm": "6.4.1"
+    "npm": "6.4.1",
+    "yarn": "1.9.4"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

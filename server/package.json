@@ -12,7 +12,9 @@
     "express": "^4.16.3"
   },
   "engines": {
-    "node": "8.11.3"
+    "node": "8.11.3",
+    "npm": "6.4.1",
+    "yarn": "1.9.4"
   },
   "scripts": {
     "start": "nodemon -r babel-register server.js",
