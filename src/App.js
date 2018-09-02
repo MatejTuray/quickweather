@@ -35,7 +35,7 @@ class App extends React.PureComponent {
 
     }
     componentDidMount() {
-        window.screen.lockOrientation("portrait")
+
         let formSelector = document.querySelector("#options")
         let url
         let forecastType
