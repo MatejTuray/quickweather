@@ -48,7 +48,7 @@ select:hover{
 .d-flex.justify-content-center.mt-5{
     font-size: $s-size;
 }
-@media (min-width: $desktop-breakpoint){
+@media screen and (min-width: $desktop-breakpoint){
     #options{
     margin-right: 2.2rem;
     width: 45%;
@@ -62,17 +62,17 @@ select:hover{
     font-size: $m-size;
 }
 }
-@media (min-width: 700px){
+@media screen and (min-device-width: 481px) and (max-device-width: 768px){
     #options{
-    margin-right: 2.2rem;
+    margin-bottom: 0.5rem;
     width: 100%;
     }
     #main-btn{
     width: 100%;
-    margin-top: -1.5rem;
+    margin-top: 2rem;
     padding-left: 2rem;
 }
     .d-flex.justify-content-center.mt-5{
-    font-size: $m-size;
+    font-size: $s-size;
 }
 }
