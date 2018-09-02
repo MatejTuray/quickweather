@@ -62,7 +62,7 @@ select:hover{
     font-size: $m-size;
 }
 }
-@media screen and (min-device-width: 481px) and (max-device-width: 768px){
+@media screen and (min-device-width: 481px) and (max-device-width: 900px){
     #options{
     margin-bottom: 0.5rem;
     width: 100%;

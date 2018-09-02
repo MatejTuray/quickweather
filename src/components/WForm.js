@@ -14,7 +14,7 @@ class WForm extends React.Component {
 
         if (e.target.value === "daily") {
             this.setState({
-                buttonText: "Predpoveď počasia na týždeň"
+                buttonText: "Predpoveď na týždeň"
             })
         }
         else if (e.target.value === "currently") {
