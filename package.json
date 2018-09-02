@@ -23,7 +23,7 @@
     "start": "cd server && node server.js",
     "build-js": "react-scripts build",
     "build": "concurrently \"cd server && yarn build\" yarn build",
-    "heroku-postbuild": "concurrently \"cd server && yarn build\" yarn build",
+    "heroku-postbuild": "yarn build",
     "test": "react-scripts test --env=jsdom",
     "test-routes": "mocha ./server/api/routes.test",
     "test-routes-watch": "nodemon --exec \"npm test\"",
