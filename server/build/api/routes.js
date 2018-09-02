@@ -4,7 +4,7 @@ const dotenv = require("dotenv").config({ path: pathTo });
 const express = require("express");
 const app = express();
 const axios = require("axios");
-dotenv.parsed;
+
 const apiKey = process.env.APP_KEY;
 module.exports = app => {
     let lat, lng;
@@ -16,18 +16,17 @@ module.exports = app => {
     });
     // GET ROUTES
     app.get("/api/weather-forecast-week", (req, res) => {
-        console.log(apiKey);
         console.log(`Fetching weekly data for lat: ${lat} long: ${lng}`);
-        axios.get(`https://api.darksky.net/forecast/c45c4b22e0cf597618cc5f1e10561cec}/${lat},${lng}?units=ca&lang=sk`).then(response => res.send(response.data.daily.data));
+        axios.get(`https://api.darksky.net/forecast/${apiKey}/${lat},${lng}?units=ca&lang=sk`).then(response => res.send(response.data.daily.data));
     });
     app.get("/api/weather-current", (req, res) => {
 
         console.log(`Fetching current data for lat: ${lat} long: ${lng}`);
-        axios.get(`https://api.darksky.net/forecast/c45c4b22e0cf597618cc5f1e10561cec/${lat},${lng}?units=ca&lang=sk`).then(response => res.send(response.data.currently));
+        axios.get(`https://api.darksky.net/forecast/${apiKey}/${lat},${lng}?units=ca&lang=sk`).then(response => res.send(response.data.currently));
     });
     app.get("/api/weather-hourly", (req, res) => {
 
         console.log(`Fetching hourly data for lat: ${lat} long: ${lng}`);
-        axios.get(`https://api.darksky.net/forecast/c45c4b22e0cf597618cc5f1e10561cec/${lat},${lng}?units=ca&lang=sk`).then(response => res.send(response.data.hourly.data));
+        axios.get(`https://api.darksky.net/forecast/${apiKey}/${lat},${lng}?units=ca&lang=sk`).then(response => res.send(response.data.hourly.data));
     });
 };
