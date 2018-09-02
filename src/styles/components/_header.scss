@@ -1,0 +1,25 @@
+.flex-container{
+    display:flex;
+    justify-content: space-between;
+}
+.left{
+    position: absolute;
+    left: 0;
+}
+.right {
+    position: absolute;
+    right: 0;
+}
+#header{
+    background-color: rgb(0, 20, 75);
+    height: 3rem;
+}
+
+.img-header{
+    max-width: 15rem;
+    max-height: 15rem;
+}
+.img-node{
+    max-width: 3rem;
+    max-height: 3rem;
+}
