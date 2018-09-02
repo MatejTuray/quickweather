@@ -20,7 +20,7 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "start": "cd server && node server.js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "heroku-postbuild": "npm-run-all build-css build-js",
