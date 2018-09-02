@@ -53,14 +53,10 @@ class App extends React.PureComponent {
                 type: forecastType,
             })
         }
-        const options = {
-            enableHighAccuracy: true,
-            timeout: 5000,
-            maximumAge: 0
-        };
+
         navigator
             .geolocation
-            .getCurrentPosition((pos, error, options) => {
+            .getCurrentPosition((pos, error, ) => {
                 let lat = pos.coords.latitude;
                 let lng = pos.coords.longitude;
                 this.setState({ acceptedGeoLoc: true, lat: lat, lng: lng, address: "Počasie vo Vašej lokalite:" })
