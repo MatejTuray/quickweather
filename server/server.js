@@ -1,6 +1,8 @@
 const express = require("express")
 const path = require("path")
 const app = new express()
+const http = require('http');
+const server = http.createServer(app)
 const publicPath = path.join(__dirname, "..", "build/")
 require("dotenv").load()
 const port = process.env.PORT || 8080;
@@ -14,7 +16,7 @@ require("./api/routes")(app)
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(publicPath, "index.html"))
 })
-app.listen(port, () => { console.log("server is up") })
+server.listen(port, () => { console.log("server is up") })
 
 
 
