@@ -49,7 +49,7 @@
     margin-left: 1.5rem;
 }
 .card-text-content-temp{
-    margin-left: 2.5rem;
+    margin-left: 1rem;
 }
 .card-text-content-precip{
     margin-left:2rem;
@@ -59,4 +59,9 @@ i{
 }
 .card-text-content-temp-single{
     margin-left: 2rem;
+}
+@-moz-document url-prefix(){
+    .card{
+        margin-right: 5rem;
+    }
 }
