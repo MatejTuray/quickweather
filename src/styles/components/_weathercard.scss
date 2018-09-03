@@ -64,12 +64,12 @@ i{
 @-moz-document url-prefix(){
     .card{
         
-        min-height: 45rem;
+        min-height: 42rem;
     }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
    .card {
         
-        min-height: 42rem;
+        min-height: 45rem;
    }
 }
