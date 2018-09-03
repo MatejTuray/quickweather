@@ -45,7 +45,7 @@ const WeatherCard = (props) => {
                     <br />
 
                     <p className="card-text"><i id="tempLow" className="fas fa-thermometer-empty"></i><span className="card-text-content-temp">{Math.round(props.tempLow) + "°C"}</span>
-                        <br />
+
                         <i id="tempHigh" className="fas fa-thermometer-three-quarters"></i><span className="card-text-content-temp">{Math.round(props.tempHigh) + "°C"}</span><br />
                         <i className="wi wi-umbrella"></i><span className="card-text-content-precip">{Math.round(props.probRain * 100)} % pravdep. zrážok </span><br />
                         <i id="rainDrop" className="wi wi-raindrop"></i><span className="card-text-content-precip"> {((props.intRain) * 10).toFixed(1)} mm </span><br />
