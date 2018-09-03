@@ -67,8 +67,21 @@ i{
         min-height: 42rem;
     }
 }
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
    .card {
+        
+        min-height: 45rem;
+   }
+}
+@media all and (min-width:0\0){
+       .card {
+        
+        min-height: 45rem;
+   }
+}
+@supports (-ms-ime-align:auto) {
+
+ .card {
         
         min-height: 45rem;
    }
