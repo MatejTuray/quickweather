@@ -1,7 +1,7 @@
 .card{
     margin-right: 1.5rem;
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     border: 1px solid white;
     min-width: 20rem;
     max-width: 30rem;
@@ -70,6 +70,6 @@ i{
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
    .card {
         
-        min-height: 45rem;
+        min-height: 42rem;
    }
 }
