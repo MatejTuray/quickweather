@@ -79,9 +79,7 @@ class App extends React.PureComponent {
 
 
     handleSubmit(e) {
-        this.setState({
-            hasCompleted: false,
-        })
+
         e.preventDefault();
         let url
         let forecastType = e.target[1].value;
@@ -107,6 +105,9 @@ class App extends React.PureComponent {
         let userInput = e.target[0].value
 
         if (userInput !== "") {
+            this.setState({
+                hasCompleted: false,
+            })
             axios
                 .get(`https://maps.googleapis.com/maps/api/geocode/json?address=${userInput}`)
                 .then((response) => {
