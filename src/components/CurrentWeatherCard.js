@@ -50,7 +50,6 @@ const CurrentWeatherCard = (props) => {
                 <div className="card-body">
                     <h4 className="card-title">{props.summary}.</h4>
 
-                    <br />
 
                     <p className="card-text">
                         <i id="tempHigh" className="fas fa-thermometer-three-quarters"></i><span className="card-text-content-temp">{Math.round(props.temp) + "°C"}</span><br />
