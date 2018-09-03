@@ -3,7 +3,8 @@
     margin-bottom: 1rem;
     padding-bottom: 1rem;
     border: 1px solid white;
-    max-width: 20rem;
+    min-width: 20rem;
+    max-width: 30rem;
     max-height: 40rem;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -63,12 +64,12 @@ i{
 @-moz-document url-prefix(){
     .card{
         
-        min-height: 43rem;
+        min-height: 45rem;
     }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
    .card {
         
-        min-height: 43rem;
+        min-height: 45rem;
    }
 }
