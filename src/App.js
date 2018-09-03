@@ -82,29 +82,31 @@ class App extends React.PureComponent {
 
         e.preventDefault();
         let url
-        let forecastType = e.target[1].value;
-        if (forecastType === "daily") {
-            url = "/api/weather-forecast-week"
-            this.setState({
-                type: forecastType,
-            })
-        }
-        else if (forecastType === "currently") {
-            url = "/api/weather-current"
-            this.setState({
-                type: forecastType,
-            })
-        }
-        else if (forecastType === "hourly") {
-            url = "/api/weather-hourly"
-            this.setState({
-                type: forecastType,
-            })
-        }
-
         let userInput = e.target[0].value
+        let forecastType = e.target[1].value;
+
 
         if (userInput !== "") {
+            if (forecastType === "daily") {
+                url = "/api/weather-forecast-week"
+                this.setState({
+                    type: forecastType,
+                })
+            }
+            else if (forecastType === "currently") {
+                url = "/api/weather-current"
+                this.setState({
+                    type: forecastType,
+                })
+            }
+            else if (forecastType === "hourly") {
+                url = "/api/weather-hourly"
+                this.setState({
+                    type: forecastType,
+                })
+            }
+
+
             this.setState({
                 hasCompleted: false,
             })
@@ -137,19 +139,21 @@ class App extends React.PureComponent {
                                 hasCompleted: true,
                             }))
                     }
-                    else if (userInput === "") {
-                        alert("Vložte prosím adresu")
-                    }
-                    else {
-                        alert("Lokalita ktorú ste uviedli nebola platná, prosím opravte alebo bližšie špecifikujte lokalitu")
-                    }
+
                 }, () => alert("Vyskytol sa problém s komunikáciou so serverom"))
                 .catch((e) => console.log("Error", e)); e
                     .target[0]
-                    .value = "";
+                    .value = ""
         }
-
+        else if (userInput === "") {
+            alert("Vložte prosím adresu")
+        }
+        else {
+            alert("Lokalita ktorú ste uviedli nebola platná, prosím opravte alebo bližšie špecifikujte lokalitu")
+        }
     }
+
+
     handleChange(e) {
         this.setState({
             isLoading: false
