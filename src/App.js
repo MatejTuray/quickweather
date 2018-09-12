@@ -5,6 +5,7 @@ import CurrentWeatherCard from "./components/CurrentWeatherCard";
 import HourlyWeather from "./components/HourlyWeather";
 import Header from "./components/Header";
 import axios from "axios";
+import api_key from "./config"
 import "./styles/styles.css"
 
 
@@ -84,6 +85,7 @@ class App extends React.PureComponent {
         let url
         let userInput = e.target[0].value
         let forecastType = e.target[1].value;
+        console.log(api_key)
 
 
         if (userInput !== "") {
@@ -138,10 +140,9 @@ class App extends React.PureComponent {
                                 this.setState({
                                     isLoading: false,
                                     hasCompleted: true,
-                                })
-                                e
-                                    .target[0]
-                                    .value = ""
+                                });
+                                e.target[0].value = ""
+
                             })
                     }
 
