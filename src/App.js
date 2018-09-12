@@ -115,9 +115,9 @@ class App extends React.PureComponent {
                 .then((response) => {
                     if (response.data.status === "OK") {
 
-                        let lat = response.data.results[0].position.lat
-                        let lng = response.data.results[0].position.lon
-                        let address = response.data.results[0].address.freeformAddress
+                        let lat = response.results[0].position.lat
+                        let lng = response.results[0].position.lon
+                        let address = response.results[0].address.freeformAddress
                         this.setState({ lat: lat, lng: lng, address: `Počasie v: ${address}` });
                         axios.post("/api/weather-forecast-location", {
                             lat: this.state.lat,
