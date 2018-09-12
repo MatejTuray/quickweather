@@ -111,13 +111,13 @@ class App extends React.PureComponent {
                 hasCompleted: false,
             })
             axios
-                .get(`https://maps.googleapis.com/maps/api/geocode/json?address=${userInput}`)
+                .get(`https://api.tomtom.com/search/2/geocode/${userInput}.json?key=1yp7IpVtKnUVJHMczlHYKoINoR8Xf65T`)
                 .then((response) => {
                     if (response.data.status === "OK") {
 
-                        let lat = response.data.results[0].geometry.location.lat
-                        let lng = response.data.results[0].geometry.location.lng
-                        let address = response.data.results[0].formatted_address
+                        let lat = response.data.results[0].position.lat
+                        let lng = response.data.results[0].position.lon
+                        let address = response.data.results[0].address.freeformAddress
                         this.setState({ lat: lat, lng: lng, address: `Počasie v: ${address}` });
                         axios.post("/api/weather-forecast-location", {
                             lat: this.state.lat,
