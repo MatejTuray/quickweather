@@ -134,16 +134,19 @@ class App extends React.PureComponent {
                                 }); this.setState((prevState) => ({
                                     weather: prevState.weather.concat(response.data),
                                 }))
-                            }).then(() => this.setState({
-                                isLoading: false,
-                                hasCompleted: true,
-                            }))
+                            }).then(() => {
+                                this.setState({
+                                    isLoading: false,
+                                    hasCompleted: true,
+                                })
+                                e
+                                    .target[0]
+                                    .value = ""
+                            })
                     }
 
                 }, () => alert("Vyskytol sa problém s komunikáciou so serverom"))
-                .catch((e) => console.log("Error", e)); e
-                    .target[0]
-                    .value = ""
+                .catch((e) => console.log("Error", e));
         }
         else if (userInput === "") {
             alert("Vložte prosím adresu")
