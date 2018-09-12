@@ -113,34 +113,34 @@ class App extends React.PureComponent {
             axios
                 .get(`https://api.tomtom.com/search/2/geocode/${userInput}.json?key=1yp7IpVtKnUVJHMczlHYKoINoR8Xf65T`)
                 .then((response) => {
-                    if (response.data.status === "OK") {
+                    console.log(response)
 
-                        let lat = response.results[0].position.lat
-                        let lng = response.results[0].position.lon
-                        let address = response.results[0].address.freeformAddress
-                        this.setState({ lat: lat, lng: lng, address: `Počasie v: ${address}` });
-                        axios.post("/api/weather-forecast-location", {
-                            lat: this.state.lat,
-                            lng: this.state.lng,
-                            isLoading: true,
-                            weather: [],
+                    let lat = response.results[0].position.lat
+                    let lng = response.results[0].position.lon
+                    let address = response.results[0].address.freeformAddress
+                    this.setState({ lat: lat, lng: lng, address: `Počasie v: ${address}` });
+                    axios.post("/api/weather-forecast-location", {
+                        lat: this.state.lat,
+                        lng: this.state.lng,
+                        isLoading: true,
+                        weather: [],
 
-                        }).catch((e) => { console.log(e) })
-                        axios
-                            .get(url)
-                            .then((response) => {
-                                this.setState({
-                                    weather: []
-                                }); this.setState((prevState) => ({
-                                    weather: prevState.weather.concat(response.data),
-                                }))
-                            }).then(() => this.setState({
-                                isLoading: false,
-                                hasCompleted: true,
+                    }).catch((e) => { console.log(e) })
+                    axios
+                        .get(url)
+                        .then((response) => {
+                            this.setState({
+                                weather: []
+                            }); this.setState((prevState) => ({
+                                weather: prevState.weather.concat(response.data),
                             }))
-                    }
+                        }).then(() => this.setState({
+                            isLoading: false,
+                            hasCompleted: true,
+                        }))
+                }
 
-                }, () => alert("Vyskytol sa problém s komunikáciou so serverom"))
+                    , () => alert("Vyskytol sa problém s komunikáciou so serverom"))
                 .catch((e) => console.log("Error", e)); e
                     .target[0]
                     .value = ""
