@@ -85,7 +85,6 @@ class App extends React.PureComponent {
         let url
         let userInput = e.target[0].value
         let forecastType = e.target[1].value;
-        console.log(api_key)
 
 
         if (userInput !== "") {
@@ -113,7 +112,7 @@ class App extends React.PureComponent {
                 hasCompleted: false,
             })
             axios
-                .get(`https://api.tomtom.com/search/2/geocode/${userInput}.json?key=1yp7IpVtKnUVJHMczlHYKoINoR8Xf65T`)
+                .get(`https://api.tomtom.com/search/2/geocode/${userInput}.json?key=${api_key}`)
                 .then((response) => {
 
                     if (response.status === 200) {
